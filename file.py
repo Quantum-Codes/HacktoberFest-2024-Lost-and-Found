@@ -18,6 +18,7 @@ import matplotlib.pyplot as plt
 import requests
 import os
 import time 
+import dotenv
 
 threshold =0.3
 
@@ -28,7 +29,8 @@ threshold =0.3
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 # change the file in gitignore and add the file in the same directory
 
-creds = ServiceAccountCredentials.from_json_keyfile_name('credSheetsDemo.json', scope)
+dotenv.load_dotenv()
+creds = ServiceAccountCredentials.from_json_keyfile_name('credSheets.json', scope)
 client = gspread.authorize(creds)
 
 # Open the Google Sheets document by its title
@@ -207,8 +209,8 @@ for found_item_name, found_item in found_items.items():
         
         #  print(f"Email sent to {lost_item['email']} for lost item '{lost_item_name}'")
     #  change the email address to the email from which u want to send the email reply 
-    email_address = 'testemail@gmail.com'
-    email_password = '<test_email_password>'
+    email_address = os.environ["email"]
+    email_password = os.environ["app_password"]
     
     message['From'] = email_address
     message['To'] = to_email

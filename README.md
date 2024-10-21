@@ -30,8 +30,9 @@ This project aims to automate the matching of lost and found items by utilizing 
 2. Create a new project.
 3. Navigate to **APIs & Services > Credentials** and create a new Service Account.
 4. Add a role to your service account, such as **Editor** or **Viewer**.
-5. Create a JSON key for your service account, and download it. Save this file as `credSheetsDemo.json` in the root directory of your project.
-6. Share the Google Sheets document with your Service Account email address.
+5. Create a JSON key for your service account, and download it. Save this file as `credSheets.json` in the root directory of your project.
+6. Enable the Google Drive API on the Google Cloud Console
+7. Share the Google Sheets document with your Service Account email address.
 
 For detailed instructions on setting up a Google Cloud Service Account, refer to the [Google Cloud documentation](https://cloud.google.com/iam/docs/creating-managing-service-account-keys).
 
@@ -44,7 +45,14 @@ For detailed instructions on setting up a Google Cloud Service Account, refer to
 
 ## Important Note
 
-- To work on the `file.py`, you need to change the `credSheetsDemo.json` file as per the above mentioned steps, and then continue further.
+- To work on the `file.py`, you need to create `credSheets.json` file (similar to `credSheetsDemo.json`) as per the above mentioned steps, and then continue further.
+- Create an app password on the account you will be sending emails from, then create a .env file in format:
+
+```
+email=""
+app_password=""
+```
+
 ## Our Top Contributors 
 
 <p align="center"><a href="https://github.com/codeclubiittp/HacktoberFest-2024-Lost-and-Found/graphs/contributors">
