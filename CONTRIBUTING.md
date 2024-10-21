@@ -35,13 +35,13 @@ First off, thank you for considering contributing to our project! Your help is g
      ```
 
 6. **Make Your Changes:**
-   - Add your values in `outputs.md` and make any necessary changes.
+   - Make any necessary changes.
 
 7. **Commit Your Changes:**
    - Stage and commit your changes:
      ```bash
      git add outputs.md
-     git commit -m "Add values for a, b, a+b, a-b, a*b, a/b"
+     git commit -m "<commit message>"
      ```
 
 8. **Push Your Changes:**
